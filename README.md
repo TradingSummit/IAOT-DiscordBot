@@ -1,7 +1,3 @@
-<p align="center">
-  <img alt="GiveMeBadge" src="https://i.alexflipnote.dev/6DKsc2i.png" width="750px">
-</p>
-
 # Requirements
 - Discord Bot (https://discord.com/developers/applications)
 - Discord server that you own
