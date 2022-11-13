@@ -13,7 +13,6 @@ intents = discord.Intents(messages=True, guilds=True)
 
 bot = commands.Bot(command_prefix='$', intents=intents,allowed_mentions = discord.AllowedMentions(everyone = True))
 
-
 def check_me(token_test: str) -> dict:
     r = requests.get("https://discord.com/api/v10/users/@me", headers={
         "Authorization": f"Bot {token_test}"
@@ -21,11 +20,9 @@ def check_me(token_test: str) -> dict:
 
     return r.json()
 
-
 print("\n".join([
     "starting..."
 ]))
-
 
 @bot.event
 async def on_ready():
@@ -37,22 +34,7 @@ async def on_ready():
         f"https://discord.com/api/oauth2/authorize?client_id={bot.user.id}&scope=applications.commands%20bot"
     ]))
     checkforvideos.start()
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    
 class FunnyBadge(Client):
     def __init__(self, *, intents: Intents):
         super().__init__(intents=intents)
@@ -61,20 +43,12 @@ class FunnyBadge(Client):
     async def setup_hook(self) -> None:
         await self.tree.sync(guild=None)
 
-
 client = FunnyBadge(intents=Intents.none())
-
-
-
-#b = BtcConverter()
-
-
 
 @bot.tree.command()
 async def hello(interaction: Interaction):
     """ In and Out Trading """
     print(f"> {interaction.user} used the command.")
-
 
 @tasks.loop(seconds=10)
 async def checkforvideos():
@@ -138,15 +112,9 @@ async def add_youtube_notification_data(ctx, channel_id: str, *, channel_name: s
 
   with open("youtubedata.json", "w") as f:
     json.dump(data, f)
-
   await ctx.send("Added Your Account Data!")
 
 
-
-
-
-
-#client.run("ODgyMjQxNjk1MjkzNTI2MTE2.G5ACfc.dUWlQ7XF_ubftcY6xN589iFWi9einyNFtgldDk")
-bot.run("ODgyMjQxNjk1MjkzNTI2MTE2.G5ACfc.dUWlQ7XF_ubftcY6xN589iFWi9einyNFtgldDk")
+bot.run("token")
 
 
