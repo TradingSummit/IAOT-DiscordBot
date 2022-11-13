@@ -49,6 +49,17 @@ client = FunnyBadge(intents=Intents.none())
 async def hello(interaction: Interaction):
     """ In and Out Trading """
     print(f"> {interaction.user} used the command.")
+    await interaction.response.send_message("\n".join([
+      f"Hi **{interaction.user}**, thank you for saying hello to me.",
+      "",
+      "__**What is In and Out?**__",
+      "<:inandoutlogofekete:1014902819079344179> In And Out Trading  is a trading team where we help each other in trading and discuss our ideas about the markets! <:inandoutlogofekete:1014902819079344179>",
+      "",
+      "<:RoleSupport:1035899393087373392> Our goal is to have a disciplined community, and build relationships <:RoleSupport:1035899393087373392>",
+      "",
+      f"<:inandoutlogofeher:1014902792411938926>You can find more info about our channels in <#{985238159480746034}> <:inandoutlogofeher:1014902792411938926>"
+      
+  ]))
 
 @tasks.loop(seconds=10)
 async def checkforvideos():
@@ -70,7 +81,6 @@ async def checkforvideos():
     for video in videos:
       latest_video_url ="https://www.youtube.com/watch?v="+video['videoId']
       break
-    print(latest_video_url)
 
     #checking if url in youtubedata.json file is not equals to latest_video_url
     if not str(data[youtube_channel]["latest_video_url"]) == latest_video_url:
@@ -115,6 +125,4 @@ async def add_youtube_notification_data(ctx, channel_id: str, *, channel_name: s
   await ctx.send("Added Your Account Data!")
 
 
-bot.run("token")
-
-
+bot.run("asd")
