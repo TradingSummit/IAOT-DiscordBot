@@ -4,7 +4,6 @@ import re
 
 import discord
 import requests
-import scrapetube
 from discord import Client, Intents, Interaction, app_commands
 #from forex_python.bitcoin import BtcConverter
 from discord.ext import commands, tasks
@@ -25,9 +24,7 @@ async def on_message(message):
       reaction = "👍🏿"
     elif 'ping' == message.content.lower():
       msg = "**pong**"
-    elif '<@1017757886820134963>' == message.content.lower():
-      msg = "**is a Monke**"
-    elif len([x for x in ['help'] if x in message.content.lower()])>0:
+    elif len([x for x in ['help'] if x in message.content.lower()])>0 and "@" not in message.content.lower():
       msg = "<@&1043655353457451038>"
     
     if msg != "":
@@ -97,6 +94,6 @@ async def hey(interaction: Interaction):
   ]))
 
 
-client.run("ODgyMjQxNjk1MjkzNTI2MTE2.GCIZCE.1XcsiSmRAAmmfcRoCB895B_1Fe_BLNsnS0QNLw")
+client.run("ODgyMjQxNjk1MjkzNTI2MTE2.GoBT5T.V8NcDoQbbbuVvLm8yxcK26FKVU2RUm-oPuDdlk")
 
 
